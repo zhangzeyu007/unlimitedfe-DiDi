@@ -1,7 +1,9 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 
 export default (appInfo: EggAppInfo) => {
-  const config = {} as PowerPartial<EggAppConfig>;
+
+  const config = {
+  } as PowerPartial<EggAppConfig>;
 
   // override config from framework / plugin
   // use for cookie sign key, should change to your own and keep security
@@ -9,6 +11,15 @@ export default (appInfo: EggAppInfo) => {
 
   // add your egg config in here
   config.middleware = [];
+
+  config.sequelize = {
+    dialect: 'mysql',
+    database: 'unlimitedfe',
+    host: 'localhost',
+    port: 3306,
+    username: 'root',
+    password: 'root',
+  };
 
   // add your special config in here
   const bizConfig = {
