@@ -10,7 +10,7 @@
   "scripts": {
     "start": "egg-scripts start --daemon --title=egg-server-unlimitedServer",
     "stop": "egg-scripts stop --title=egg-server-unlimitedServer",
-    "dev": "egg-bin dev",
+    "dev": "egg-bin dev --port 8080",
     "debug": "egg-bin debug",
     "test-local": "egg-bin test",
     "test": "npm run lint -- --fix && npm run test-local",
@@ -49,7 +49,9 @@
     "type": "git",
     "url": ""
   },
-  "eslintIgnore": ["coverage"],
+  "eslintIgnore": [
+    "coverage"
+  ],
   "author": "zhangzeyu",
   "license": "MIT"
 }
