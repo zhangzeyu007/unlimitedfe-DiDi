@@ -21,6 +21,7 @@
     ],
     "rules": {
         // "extends": "eslint:recommended"
+         "no-unused-vars": ["error", { "ignoreRestSiblings": true }]
     }
     
 }

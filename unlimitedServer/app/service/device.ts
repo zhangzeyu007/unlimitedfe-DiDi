@@ -7,9 +7,19 @@ export default class Device extends Service {
 	 * @returns
 	 * @memberof DeviceServ
 	 */
-
 	public async list(search: any) {
-		const dataList = await this.ctx.model.device.list(search);
-		return dataList;
+		const keyArray = [
+			'product_id',
+		]
+			const where = {};
+			Object.keys(search).forEach(key => {
+				if (keyArray.includes(key) && search[key]) {
+					where[key] = search[key];
+				}
+			});
+			const dataList = await this.ctx.model.Device.findAll({
+				where
+			})
+			return dataList;
 	}
 }
