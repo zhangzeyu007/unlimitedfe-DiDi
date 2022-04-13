@@ -1,4 +1,19 @@
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
+import  { Sequelize}  from  'sequelize';
+
+export type DefaultConfig = PowerPartial<EggAppConfig & BizConfig>
+
+export interface BizConfig {
+  sourceUrl: string
+  news: {
+    pageSize: number
+    serverUrl: string
+  }
+  logger: {
+    level?: 'info' | 'all' | 'INFO'
+    basePath?: string
+  }
+}
 
 export default (appInfo: EggAppInfo) => {
 
@@ -8,7 +23,7 @@ export default (appInfo: EggAppInfo) => {
   // override config from framework / plugin
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1649738884531_2494';
-
+  config.model = Sequelize;
   // add your egg config in here
   config.middleware = [];
 
@@ -20,6 +35,7 @@ export default (appInfo: EggAppInfo) => {
     username: 'root',
     password: 'root',
   };
+
 
   // add your special config in here
   const bizConfig = {

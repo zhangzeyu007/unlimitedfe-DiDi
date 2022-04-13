@@ -21,6 +21,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "inlineSourceMap": true,
+    "baseUrl": ".", //
+    "paths": {
+      "~/*": [ "./*" ]    // 
+    },
     "importHelpers": true  // 通过tslib引入helper函数，文件必须是模块
   },
   // 表示编译器需要排除的文件或者文件夹
