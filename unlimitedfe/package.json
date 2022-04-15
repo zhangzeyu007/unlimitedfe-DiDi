@@ -10,9 +10,12 @@
   "dependencies": {
     "ant-design-vue": "^3.0.0-alpha.15",
     "axios": "^0.26.1",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.14",
+    "vue-tsc": "^0.29.5"
   },
   "devDependencies": {
+    "@types/node": "^17.0.24",
     "@vitejs/plugin-vue": "^2.3.0",
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
