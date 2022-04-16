@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-14 13:54:02
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-15 15:05:28
+ * @LastEditTime: 2022-04-16 14:30:55
  * @FilePath: \unlimitedfe\src\view\home\index.vue
 -->
 
@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import HelloWorld from '@/components/HelloWorld.vue'
-import { defineComponent } from 'vue'
+import { defineComponent ,provide ,ref} from 'vue'
 
 const Home = defineComponent({
   components:{
@@ -34,7 +34,8 @@ beforeRouteLeave (to, from) {
 console.log('----------beforeRouteLeave');
 },
 created() {
-    
+   const location = ref('North Pole')
+    provide('location',location )
   },
   methods: {
  
