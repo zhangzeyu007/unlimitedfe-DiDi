@@ -3,16 +3,11 @@
  * @Author: 张泽雨
  * @Date: 2022-04-13 16:23:52
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-15 13:39:23
+ * @LastEditTime: 2022-04-16 12:17:18
  * @FilePath: \unlimitedfe\src\components\HelloWorld.vue
 -->
 <script setup lang="ts">
-import { ref } from 'vue'
-
 defineProps<{ msg: string }>()
-
-const count = ref(0)
-
 </script>
 
 <template>
