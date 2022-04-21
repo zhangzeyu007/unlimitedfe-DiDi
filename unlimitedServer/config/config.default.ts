@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Author: 张泽雨
+ * @Date: 2022-04-12 12:48:36
+ * @LastEditors: 张泽雨
+ * @LastEditTime: 2022-04-21 16:26:31
+ * @FilePath: \unlimitedServer\config\config.default.ts
+ */
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 import  { Sequelize}  from  'sequelize';
 
@@ -17,9 +25,14 @@ export interface BizConfig {
 
 export default (appInfo: EggAppInfo) => {
 
+  const baseDir = appInfo.baseDir
+
   const config = {
   } as PowerPartial<EggAppConfig>;
-
+  
+  config.view = {
+    root: `${baseDir}/view`,
+  }
   // override config from framework / plugin
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1649738884531_2494';
