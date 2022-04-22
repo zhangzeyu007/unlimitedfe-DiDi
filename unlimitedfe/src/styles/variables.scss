@@ -1,0 +1,12 @@
+$sidebarWidth:68px;
+$sidebarWidthCollapsed:200px;
+$sidebarLogoHeight:54px;
+$sidebarLogoBg:#FAFAFA;
+$sidebarMenuBg:#FAFAFA;
+$mainTitleHeight:44px;
+$menu-active-color:#FAFAFA;
+$base-color-blue: #FAFAFA;
+:export{
+    menu-active-color:$menu-active-color;
+    mainTitleHeight:$mainTitleHeight
+}

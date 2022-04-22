@@ -16,8 +16,6 @@ import 'egg-jsonp';
 import 'egg-view';
 import 'egg-sequelize';
 import 'egg-view-nunjucks';
-import 'egg-vite-plugin';
-import 'egg-decorator-router';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -35,7 +33,5 @@ declare module 'egg' {
     view?: EggPluginItem;
     sequelize?: EggPluginItem;
     nunjucks?: EggPluginItem;
-    vitePlugin?: EggPluginItem;
-    decoratorRouter?: EggPluginItem;
   }
 }

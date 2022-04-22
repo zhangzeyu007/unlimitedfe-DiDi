@@ -1,0 +1,67 @@
+@import "./loading/inner-circles.css";
+@import './loading/dots.css';
+$base-loading: ".byui-loading-type";
+#{$base-loading}1 {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 15px;
+  border: 3px solid transparent;
+  border-top-color: $base-color-blue;
+  border-bottom-color: $base-color-blue;
+  border-radius: 50%;
+  animation: byuiLoading1-0 0.8s linear infinite;
+}
+
+#{$base-loading}1::before {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: auto;
+  content: "";
+  border: 3px solid $base-color-blue;
+  border-radius: 50%;
+  animation: byuiLoading1 0.5s alternate ease-in infinite;
+}
+
+@keyframes byuiLoading1-0 {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes byuiLoading1 {
+  from {
+    transform: scale(0.5);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
+
+
+#{$base-loading}3 {
+    display: inline-block;
+    width: 2.5em;
+    height: 3em;
+    margin-bottom: 15px;
+    border: 3px solid transparent;
+    border-top-color: $base-color-blue;
+    border-bottom-color: $base-color-blue;
+    border-radius: 50%;
+    animation: byuiLoading3 2s ease infinite;
+  }
+  
+  @keyframes byuiLoading3 {
+    50% {
+      border-width: 8px;
+      transform: rotate(360deg) scale(0.4, 0.33);
+    }
+  
+    100% {
+      border-width: 3px;
+      transform: rotate(720deg) scale(1, 1);
+    }
+  }
