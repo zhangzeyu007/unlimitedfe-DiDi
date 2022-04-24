@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-12 12:48:36
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-22 14:58:55
+ * @LastEditTime: 2022-04-23 18:24:18
  * @FilePath: \unlimitedServer\config\config.default.ts
  */
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
@@ -29,11 +29,22 @@ export default (appInfo: EggAppInfo) => {
 
   const config = {
   } as PowerPartial<EggAppConfig>;
-  console.log(`${baseDir}/view`);
-  config.view = {
-    root: `${baseDir}/view`
-  }
 
+  config.view = {
+    root: `${baseDir}/view`,
+  }
+  config.io = {
+    init: {
+      wsEngine: 'ws',
+    },
+    namespace: {
+      '/': {
+        connectionMiddleware: ['auth'],
+        packetMiddleware: ['packet'],
+      },
+    }
+  };
+  
   config.static = {
     dir: `${baseDir}/view`,
     gzip: true,
