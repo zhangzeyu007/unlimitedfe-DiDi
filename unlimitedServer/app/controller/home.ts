@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-12 12:48:36
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-23 18:28:07
+ * @LastEditTime: 2022-04-24 13:25:53
  * @FilePath: \unlimitedServer\app\controller\home.ts
  */
 
@@ -12,7 +12,7 @@ import { Controller, Context } from 'egg';
 class Home extends Controller { 
 
   public async index(ctx: Context) {
-    // await ctx.render('/unlimitedfe/index.html')
+    await ctx.render('/unlimitedfe/index.html')
     ctx.body = 'zzy'
     const device_id = '11'
     const namespace: any = ctx.app.io.of('/');

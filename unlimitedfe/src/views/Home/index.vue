@@ -3,12 +3,15 @@
  * @Author: 张泽雨
  * @Date: 2022-04-22 12:21:32
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-23 20:37:41
+ * @LastEditTime: 2022-04-24 20:38:20
  * @FilePath: \unlimitedfe\src\views\Home\index.vue
 -->
 <template>
   <div>
     <el-button type="primary">你好</el-button>
+    <div class="box">
+      <button type="primary" class="btn">hahah</button>
+    </div>
   </div>
 </template>
 
@@ -56,5 +59,15 @@ export default {
 </script>
 
 <style lang="scss">
+$color: #f00;
+@mixin button($color) {
+    width: 200px;
+    height: 20px;
+    background-color:$color;
+}
+
+.btn {
+ @include button($color) ;
+}
 
 </style>

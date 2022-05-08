@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-12 12:48:36
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-23 18:24:18
+ * @LastEditTime: 2022-04-24 13:51:39
  * @FilePath: \unlimitedServer\config\config.default.ts
  */
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
@@ -32,6 +32,10 @@ export default (appInfo: EggAppInfo) => {
 
   config.view = {
     root: `${baseDir}/view`,
+    defaultViewEngine: "nunjucks",
+    mapping: {
+      ".html": "nunjucks", // 左边写成.html后缀，会自动渲染.html文件
+    },
   }
   config.io = {
     init: {
