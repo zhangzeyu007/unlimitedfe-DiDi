@@ -3,8 +3,8 @@
  * @Author: 张泽雨
  * @Date: 2022-04-12 12:48:36
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-24 13:51:39
- * @FilePath: \unlimitedServer\config\config.default.ts
+ * @LastEditTime: 2022-05-15 23:11:34
+ * @FilePath: \unlimitedfe-DiDi\unlimitedServer\config\config.default.ts
  */
 import { EggAppConfig, EggAppInfo, PowerPartial } from 'egg';
 import { Sequelize } from 'sequelize';
@@ -32,10 +32,15 @@ export default (appInfo: EggAppInfo) => {
 
   config.view = {
     root: `${baseDir}/view`,
-    defaultViewEngine: "nunjucks",
-    mapping: {
-      ".html": "nunjucks", // 左边写成.html后缀，会自动渲染.html文件
-    },
+    // defaultViewEngine: "nunjucks",
+    // mapping: {
+    //   ".html": "nunjucks", // 左边写成.html后缀，会自动渲染.html文件
+    // },
+  }
+
+  config.static = {
+    dir: `${baseDir}/view`,
+    gzip: true,
   }
   config.io = {
     init: {
@@ -48,11 +53,7 @@ export default (appInfo: EggAppInfo) => {
       },
     }
   };
-  
-  config.static = {
-    dir: `${baseDir}/view`,
-    gzip: true,
-  }
+
   // override config from framework / plugin
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1649738884531_2494';
